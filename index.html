@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>
+	HTML5 Paint
+</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+
+<div id="top-bar">
+	New Window
+</div>
+
+<div id="playground">
+
+<div class="draggable">
+	<canvas id="c" class="resizable"></canvas>
+</div>
+
+</div>
+
+<script type="text/javascript">
+if(typeof module === 'object'){
+	window.module=module;
+	module=undefined;
+}
+
+var scriptID=0;
+var scripts=[
+	'jquery-3.2.1.min',
+	'jquery-ui.min',
+	'ui'
+];
+
+function loadScript(){
+	var scriptID=window.scriptID;
+	
+	if(scriptID < 0 || scriptID >= window.scripts.length){
+		return;
+	}
+	
+	var script=document.createElement('script');
+	script.src='./js/' + window.scripts[scriptID] + '.js';
+	script.onload=loadScript;
+	document.body.appendChild(script);
+	
+	window.scriptID++;
+}
+
+loadScript();
+</script>
+
+</body>
+</html>

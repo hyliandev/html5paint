@@ -1,0 +1,51 @@
+body, html {
+	height:100%;
+	overflow:hidden;
+}
+
+body {
+	background-color:#333;
+	color:#FFF;
+	font-family:sans-serif;
+	margin:0;
+}
+
+canvas {
+	background-color:#F0F;
+}
+
+
+
+
+
+#top-bar {
+	background-color:#555;
+	padding:1em;
+}
+
+#playground {
+	padding:0.5em;
+}
+
+
+
+
+
+.box {
+	background-color:#555;
+	border:2px solid #000;
+	height:64px;
+	width:64px;
+}
+
+
+
+
+
+.draggable {
+	display:inline-block;
+}
+
+.ui-draggable:not(.ui-draggable-disabled) {
+	cursor:move;
+}
